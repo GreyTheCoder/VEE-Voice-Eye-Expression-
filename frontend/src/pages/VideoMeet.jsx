@@ -58,11 +58,7 @@ export default function VideoMeetComponent() {
 
     let [videos, setVideos] = useState([])
 
-    // TODO
-    // if(isChrome() === false) {
-
-
-    // }
+    
 
     useEffect(() => {
         console.log("HELLO")
@@ -384,11 +380,11 @@ export default function VideoMeetComponent() {
 
     let handleVideo = () => {
         setVideo(!video);
-        // getUserMedia();
+        
     }
     let handleAudio = () => {
         setAudio(!audio)
-        // getUserMedia();
+        
     }
 
     useEffect(() => {
@@ -436,7 +432,7 @@ export default function VideoMeetComponent() {
         socketRef.current.emit('chat-message', message, username)
         setMessage("");
 
-        // this.setState({ message: "", sender: username })
+        
     }
 
     

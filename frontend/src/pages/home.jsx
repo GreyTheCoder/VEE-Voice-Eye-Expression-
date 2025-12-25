@@ -26,7 +26,8 @@ function HomeComponent() {
 
                 <div style={{ display: "flex", alignItems: "center" }}>
 
-                    <h2>Apna Video Call</h2>
+                    <h2 className="logoText">VEE(Voice • Eye • Expression)</h2>
+
                 </div>
 
                 <div style={{ display: "flex", alignItems: "center" }}>
@@ -54,7 +55,7 @@ function HomeComponent() {
             <div className="meetContainer">
                 <div className="leftPanel">
                     <div>
-                        <h2>Providing Quality Video Call Just Like Quality Education</h2>
+                        <h2>Inspired by Kalam. Built for clarity.</h2>
 
                         <div style={{ display: 'flex', gap: "10px" }}>
 
