@@ -1,5 +1,5 @@
-VEE — Voice, Eye, Expression AI Assistant
-VEE is a sophisticated MERN stack application that bridges the gap between human-like interaction and AI. By leveraging the OpenAI API, it provides a seamless chat experience with real-time streaming, secure authentication, and persistent memory.
+VEE — Real-Time Video Conferencing Platform
+VEE is a high-performance, full-stack video communication platform built to handle real-time media streaming. By utilizing WebRTC and Socket.io, it provides a seamless experience for video calls, screen sharing, and instant messaging.
 
 🔗 Live Links
 Frontend: https://vee-voice-eye-expression-frontend.onrender.com
@@ -7,40 +7,50 @@ Frontend: https://vee-voice-eye-expression-frontend.onrender.com
 Backend: https://vee-voice-eye-expression-backend.onrender.com
 
 🌟 Key Features
-Real-Time AI Streaming: Integrated OpenAI's streaming API to deliver responses word-by-word, simulating a natural "typing" effect.
+Peer-to-Peer Video Calling: Powered by WebRTC for ultra-low latency audio and video transmission directly between browsers.
 
-Live Communication: Powered by Socket.io for real-time bi-directional communication between the client and server.
+Real-Time Signaling: Uses Socket.io to manage room coordination, allowing users to join rooms and exchange connection data (SDP and ICE candidates) instantly.
 
-Secure Authentication: Implemented user security using Bcrypt for password hashing and managed sessions to keep data private.
+Screen Sharing: Integrated the getDisplayMedia API, allowing users to share their entire screen or specific windows during a call.
 
-Persistent Conversations: All chat histories are stored in MongoDB, allowing users to resume their conversations across different sessions.
+Media Controls: User-friendly toggles to mute/unmute microphones and enable/disable cameras for privacy management.
 
-Rich UI Rendering: Built with Material UI (MUI) for a polished look, including full support for Markdown and syntax-highlighted code blocks.
+Live Chat: A persistent side-bar chat built for real-time text communication without disrupting the active video session.
+
+Secure Authentication: User data is protected using Bcrypt for password hashing, with account and room data managed in MongoDB.
 
 🛠️ Tech Stack
 Frontend
 
-Framework: React 18
+Library: React 18
 
-UI Components: Material UI (MUI), Emotion
+UI Framework: Material UI (MUI)
 
-Real-time: Socket.io-client
+Real-time Media: WebRTC API
 
-State & Routing: React Router DOM, Axios
+Communication: Socket.io-client, Axios
 
 Backend
 
-Environment: Node.js, Express.js
+Framework: Node.js, Express.js
 
-Database: MongoDB via Mongoose
+Database: MongoDB (Mongoose)
+
+Signaling Server: Socket.io
 
 Security: Bcrypt (Hashing), Crypto
 
-Real-time: Socket.io (Server)
+📐 How it Works
+The platform follows a standard WebRTC architecture to establish connections:
 
-AI Integration: OpenAI SDK
+Signaling: Users connect to the Express server via Socket.io to find each other.
 
-📐 System Architecture
+Handshake: Peers exchange SDP (Session Description Protocol) to agree on video/audio formats.
+
+ICE Candidates: Browsers exchange network information to find the best path to connect through firewalls.
+
+P2P Stream: Once connected, the video data travels directly between users, ensuring the server isn't bogged down by heavy video data.
+
 ⚙️ Installation & Setup
 1. Clone the Repository
 Bash
@@ -52,14 +62,13 @@ Navigate to the backend folder: cd backend
 
 Install dependencies: npm install
 
-Create a .env file:
+Create a .env file with:
 
 Code snippet
 
 PORT=5000
-MONGO_URI=your_mongodb_uri
-OPENAI_API_KEY=your_openai_key
-Start the server: npm start (or npm run dev for nodemon)
+MONGO_URI=your_mongodb_connection_string
+Start the server: npm start
 
 3. Frontend Setup
 Navigate to the frontend folder: cd ../frontend
@@ -68,18 +77,16 @@ Install dependencies: npm install
 
 Start the application: npm start
 
-Access the app at http://localhost:3000
+Visit http://localhost:3000 to start a call.
 
-🧠 Key Learnings
-Socket Management: Learned how to handle real-time events and maintain stable connections between the user and the AI.
+🧠 Technical Challenges & Learning
+Network Traversal: Solved issues with users connecting from different networks by implementing ICE candidate exchange logic.
 
-Data Security: Focused on protecting user data using industry-standard hashing (Bcrypt) and secure environment variables for API keys.
+Media Stream Management: Learned how to dynamically add and remove "tracks" from a stream to handle muting and screen-sharing transitions smoothly.
 
-UX Optimization: Balanced the speed of AI streaming with a clean, responsive interface using Material UI.
+Synchronous State: Managed complex React state to ensure the UI updates instantly when a peer joins or leaves a room.
 
 👤 Author
 Gaurav Singh
 
 GitHub: @GreyTheCoder
-
-Role: Full Stack Developer
