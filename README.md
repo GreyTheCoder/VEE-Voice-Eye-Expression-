@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/c37085a4-b26b-4081-b428-884b52251800
 VEE — Real-Time Video Conferencing Platform
 VEE is a high-performance, full-stack video communication platform built to handle real-time media streaming. By utilizing WebRTC and Socket.io, it provides a seamless experience for video calls, screen sharing, and instant messaging.
 
@@ -7,6 +9,10 @@ Frontend: https://vee-voice-eye-expression-frontend.onrender.com
 Backend: https://vee-voice-eye-expression-backend.onrender.com
 
 🌟 Key Features
+
+https://github.com/user-attachments/assets/17e3c9bb-e150-48ad-abdb-eea2d8561786
+
+
 Peer-to-Peer Video Calling: Powered by WebRTC for ultra-low latency audio and video transmission directly between browsers.
 
 Real-Time Signaling: Uses Socket.io to manage room coordination, allowing users to join rooms and exchange connection data (SDP and ICE candidates) instantly.
